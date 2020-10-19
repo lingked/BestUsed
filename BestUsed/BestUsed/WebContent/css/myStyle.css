@@ -1,0 +1,198 @@
+@CHARSET "ISO-8859-1";
+
+html {
+	color: #2E2E2E;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #F2F2F2;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 80%;
+	height: 100%;
+	margin: .5% 10%;
+}
+
+.header {
+	padding: 0 0 20px 0;
+	width: 100%;
+	text-align: center;
+	background-color: #F2F2F2;
+	color: #424242;
+	border-bottom: 1px #424242 solid;
+}
+
+.body {
+	margin: 10px;
+}
+
+.footer {
+	clear: both;
+	position: inherit;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	height: 20px;
+	background-color: #808080;
+	color:#fff;
+}
+
+
+.prodheading {
+	width: 100%;
+	height: 20px;
+	background-color: #808080;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.prodContainer {
+	position: inherit;
+	height: auto;
+	float: left;
+}
+
+table {
+	width: 80%;
+	margin-top: 20px;
+}
+
+td, td.center-col {
+	height: 40px;
+}
+
+td.center-col {
+	text-align: center;
+}
+
+td.right-col {
+	text-align: right;
+	padding-right: 15px;
+}
+
+th {
+	color: #424242;
+	border:1pt solid #808080;
+}
+
+td.tot {
+	color: #424242;
+	border:1pt solid #808080;
+}
+.tableContainer {
+	padding-left: 20px;
+}
+
+#wrapper {
+	margin-left:auto;
+    margin-right:auto;
+    height:auto; 
+    width:auto;
+}
+
+.button-bar {
+	float:left;
+	clear: both;
+}
+
+.explanation {
+	padding-left: 10px;
+	font-size: x-small;
+}
+
+.confirmation {
+	text-align: center;
+}
+
+.clear_format {
+	margin:auto;
+	width: 100%;
+	text-decoration: none;
+	color: inherit;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.slogen {
+	margin: 3rem;
+}
+
+.image {
+	width: 80px;
+	max-height: 96px;
+}
+
+.itemContainer-name{
+	width: 15rem;;
+}
+
+.itemContainer-price{
+	width: 30rem;
+}
+
+.text-center{
+	text-align:center;
+}
+
+.about-container {
+	margin: 0 .5rem 0 5rem ;
+}
+
+.intro-container {
+	width: 100%;
+	min-height: 20rem;
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+}
+
+.intro-container__left {
+	width: 60%;
+	height: 45%;
+	margin: auto;
+	flex-direction: column;
+	text-align: center;
+}
+
+.intro-container__right {
+	width: 60%;
+	height: 45%;
+	margin: auto;
+	text-align: center;
+}
+
+.img-about {
+	height: 15rem;
+	width: 15rem;
+}
+
+.contact-container {
+	text-align: center;
+	font-size: 27px;
+	display: block;
+}
+
+.img-gallary {
+	height: 10rem;
+	width: 90%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+}
+
+.img-goods {
+	margin: auto
+}
+
+.img-goods-size {
+	height: 7rem;
+	width: auto;
+}
+
+
+	
