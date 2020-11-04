@@ -24,16 +24,17 @@
 		    	<th class="itemContainer">Quantity</th>
 		    	<th class="itemContainer">Image</th>
 		    </tr>
-			<c:forEach items="${order.items}" var="item" varStatus="loop">
+			<c:forEach items="${inventory.items}" var="item" varStatus="loop">
 				<tr>
+					<form:input type="hidden" path="lineItems[${loop.index}].itemNumber" value="${item.itemNumber}"/>
 					<td class="text-center"><c:out value="${item.name}"></c:out></td>
-					<form:input type="hidden" path="items[${loop.index}].name" value="${item.name}"/>
+					<form:input type="hidden" path="lineItems[${loop.index}].name" value="${item.name}"/>
 					<td class="text-center"><c:out value="$${item.price}"></c:out></td>
-					<form:input type="hidden" path="items[${loop.index}].price" value="${item.price}"/>
+					<form:input type="hidden" path="lineItems[${loop.index}].price" value="${item.price}"/>
 					<td class="text-center"><input type="checkbox" id="checkboxEvent-${loop.index}"></td>
 					<td class="text-center"><form:input id="${loop.index}-show" type="number" min="0" step="1" 
 					pattern="[0-9]*"  onchange="checkQuantity(event)"
-					path="items[${loop.index}].quantity" readOnly="true"/>
+					path="lineItems[${loop.index}].quantity" readOnly="true"/>
 					<p id='alert-${loop.index}' style="display: none">Input must be a positive integer</p>
 					<p id='alert--${loop.index}' style="display: none"></p></td>
 					<td class="text-center"><img class="image" alt="basketball" src="${item.imgUrl}" /></td>

@@ -22,7 +22,7 @@
 	
 	<h4>Order details</h4>
     <table>
-	<c:forEach items="${order.getItems()}" var="item" varStatus="loop">
+	<c:forEach items="${order.getLineItems()}" var="item" varStatus="loop">
 		<tr>
 			<td><c:out value="${item.getName()}"></c:out></td>
 			<td><c:out value="$ ${item.getPrice()}"></c:out></td> 

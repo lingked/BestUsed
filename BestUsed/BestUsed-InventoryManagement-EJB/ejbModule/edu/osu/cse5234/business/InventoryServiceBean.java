@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+//import javax.persistence.criteria.Order;
 
 /**
  * Session Bean implementation class InventoryServiceBean
@@ -22,23 +25,18 @@ public class InventoryServiceBean implements InventoryService {
         // TODO Auto-generated constructor stub
     }
     
+    @PersistenceContext
+	EntityManager entityManager;
+    
+    String MY_QUERY = "SELECT i FROM Item i";
+    
     @Override
     public Inventory getAvailableInventory() {
     	Inventory inventory = new Inventory();
+    	
     	List<Item> items = new ArrayList<>();
-		Item item1 = new Item("basketball", "15.00", "0", "images/basketball.png", "5");
-		Item item2 = new Item("IPhone", "500.00", "0", "images/iphone.jpg", "6");
-		Item item3 = new Item("chair", "10.00", "0", "images/chair.jpg", "7");
-		Item item4 = new Item("desk", "25.00", "0", "images/desk.jpg", "8");
-		Item item5 = new Item("Mac", "1000.00", "0", "images/mac.jpg", "9");
-		Item item6 = new Item("Lamp", "10.00", "0","images/lamp.jpg", "10");
-		
-		items.add(item1);
-		items.add(item2);
-		items.add(item3);
-		items.add(item4);
-		items.add(item5);
-		items.add(item6);
+    	
+    	items = entityManager.createQuery(MY_QUERY, Item.class).getResultList();
 		
 		inventory.setItems(items);
 		return inventory;
@@ -53,5 +51,22 @@ public class InventoryServiceBean implements InventoryService {
 	public boolean updateInventory(List<Item> items) {
 		return true;
 	};
+	
+	@Override
+	public EntityManager getEM() {
+		System.out.println(entityManager);
+		EntityManager em = entityManager;
+		return em;
+	}
+
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+	
+	
 
 }

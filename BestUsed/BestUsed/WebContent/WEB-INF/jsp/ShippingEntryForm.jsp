@@ -17,8 +17,12 @@
 				<td>AddressLine1: <form:input path="addressLine1" /></td>
 				<td>AddressLine2: <form:input path="addressLine2" /></td>
 				<td>City: <form:input path="city" /></td>
+			</tr>
+			<tr>
 				<td>State: <form:input path="state" /></td>
+				<td>Country: <form:input path="country" /></td>
 				<td>Zip: <form:input path="zip" /></td>
+				<td>Email: <form:input path="email" /></td>
 			</tr>
 	
 		  <tr>

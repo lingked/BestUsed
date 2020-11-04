@@ -3,6 +3,7 @@ package edu.osu.cse5234.business.view;
 import java.util.List;
 
 import javax.ejb.Remote;
+import javax.persistence.EntityManager;
 
 @Remote
 public interface InventoryService {
@@ -11,4 +12,6 @@ public interface InventoryService {
 	public boolean validateQuantity(List<Item> items);
 	
 	public boolean updateInventory(List<Item> items);
+	
+	public EntityManager getEM();
 }

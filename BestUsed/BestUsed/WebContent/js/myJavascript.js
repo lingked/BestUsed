@@ -30,7 +30,6 @@ function checkQuantity(e){
 		if(ch<'0'||ch>'9'){
 			alert2.style="display:none";
 			alert1.style="display: display; color: red";
-			alert2.style="display:none";
 			errors[index] = true;
 			itemsNum[index]=0;
 			break;
@@ -43,6 +42,9 @@ function checkQuantity(e){
 	}
 	
 	if(!errors[index]){
+		if(e.target.value==null||e.target.value==""){
+			return;
+		}
 		const Http = new XMLHttpRequest();
 		const url = new URL("http://localhost:9080/BestUsed/purchase/checkQuantity");
 		url.searchParams.append('id', e.path[0].id.charAt(0));
